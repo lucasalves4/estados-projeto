@@ -1,10 +1,13 @@
 package com.example.estadosprojeto;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class ValorAliquota {
     private String estado;
     private float valor;
 
-    public ValorAliquota(float valor){
+    public ValorAliquota(float valor) {
         this.setValor(valor);
     }
 
@@ -13,24 +16,18 @@ public class ValorAliquota {
     }
 
     public void setEstado(String estado) {
-        String[] estadosValidos = {"AC", "AL", "AP", "AM", "BA", "CE", "ES", "GO", "MA", "MT", "MS", "MG", "PA",
-                "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO", "DF"};
+        List<String> estadosValidos = Arrays.asList("AC", "AL", "AP", "AM", "BA", "CE", "ES", "GO", "MA", "MT",
+                "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO",
+                "DF");
 
-        if (estado.length() <= 2) {
-            boolean estadoValido = false;
-            for (String ufValido : estadosValidos) {
-                if (ufValido.equals(estado)) {
-                    estadoValido = true;
-                    break;
-                }
-            }
-            if (estadoValido) {
-                this.estado = estado;
-            } else {
+        if (estado.length() == 2) {
+            if (!estadosValidos.contains(estado)) {
                 throw new IllegalArgumentException("Estado Inválido!");
+            } else {
+                this.estado = estado;
             }
         } else {
-            throw new IllegalArgumentException("O estado deve ter, no máximo, dois caracteres");
+            throw new IllegalArgumentException("A sigla do estado deve ter dois caracteres!");
         }
     }
 

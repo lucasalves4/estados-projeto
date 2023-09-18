@@ -33,7 +33,7 @@ public class ValorAliquotaTests {
         try {
             valorAliquota.setEstado("ZZZZ");
         } catch (IllegalArgumentException e) {
-            assertEquals("O estado deve ter, no máximo, dois caracteres", e.getMessage());
+            assertEquals("A sigla do estado deve ter dois caracteres!", e.getMessage());
         }
     }
 
