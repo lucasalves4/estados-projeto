@@ -45,21 +45,19 @@ public class ValorImposto {
     public float calcularImposto() {
         float aliquota = 0.0f;
 
-        if ("AC".equals(estado) || "AL".equals(estado)) {
+        if ("AC".equals(estado) || "AL".equals(estado) || "RR".equals(estado) || "SC".equals(estado) ||
+                "ES".equals(estado) || "GO".equals(estado) || "PA".equals(estado) || "MT".equals(estado) ||
+                "MS".equals(estado)) {
             aliquota = 0.17f;
         } else if ("AM".equals(estado) || "AP".equals(estado) || "BA".equals(estado) ||
-                "CE".equals(estado) || "DF".equals(estado) || "ES".equals(estado) ||
-                "GO".equals(estado) || "MA".equals(estado) || "MT".equals(estado) ||
-                "MS".equals(estado) || "MG".equals(estado) || "PA".equals(estado) ||
-                "PB".equals(estado) || "PR".equals(estado) || "PE".equals(estado) ||
-                "PI".equals(estado) || "RN".equals(estado) || "RS".equals(estado) ||
-                "RJ".equals(estado)) {
+                "CE".equals(estado) || "DF".equals(estado) || "SE".equals(estado) ||
+                "MA".equals(estado) || "MG".equals(estado) || "PB".equals(estado) ||
+                "PR".equals(estado) || "PE".equals(estado) || "PI".equals(estado) ||
+                "RN".equals(estado) || "RS".equals(estado) || "RJ".equals(estado) ||
+                "SP".equals(estado) || "TO".equals(estado)) {
             aliquota = 0.18f;
         } else if ("RO".equals(estado)) {
             aliquota = 0.175f;
-        } else if ("RR".equals(estado) || "SC".equals(estado) || "SE".equals(estado) ||
-                "TO".equals(estado)) {
-            aliquota = 0.17f;
         }
 
         return valor * aliquota;
