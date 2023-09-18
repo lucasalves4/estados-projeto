@@ -1,8 +1,12 @@
 package com.example.estadosprojeto;
 
-public class ValorImposto {
+public class ValorAliquota {
     private String estado;
     private float valor;
+
+    public ValorAliquota(float valor){
+        this.setValor(valor);
+    }
 
     public String getEstado() {
         return estado;
@@ -60,6 +64,6 @@ public class ValorImposto {
             aliquota = 0.175f;
         }
 
-        return valor * aliquota;
+        return getValor() + (valor * aliquota);
     }
 }
