@@ -11,6 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>estados-projeto</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 	<name>estados-projeto</name>
 	<description>Projeto de exemplo para a disciplina Linguagem de Programação 3</description>
 	<properties>
@@ -20,6 +21,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>3.11.2</version> <!-- Versão atualizada -->
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
